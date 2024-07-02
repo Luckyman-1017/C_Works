@@ -4,7 +4,7 @@
 #include<string.h>
 #pragma warning(disable:4996)
 
-#define adress "./o”ï"
+#define adress "./å‡ºè²»"
 #define Jan "January"
 #define Feb "February"
 #define Mar "March"
@@ -26,7 +26,7 @@ struct String
 
 void askReturn(void) {
 	char answer;
-	printf("‚à‚¤ˆê“x“Ç‚İ‚İ‚Ü‚·‚©?:>"); (void)scanf(" %c", &answer);
+	printf("ã‚‚ã†ä¸€åº¦èª­ã¿è¾¼ã¿ã¾ã™ã‹?:>"); (void)scanf(" %c", &answer);
 	switch (answer)
 	{
 	case 'y':main(); break;
@@ -40,14 +40,14 @@ void moneyCheck(FILE* fp, FILE* fp2, char* year, const char* month) {
 	int money[150], i = 0, j = 0, moneySum = 0, copymoney[150];
 	struct String item[150], copyitem[150];
 
-	printf("\t`o”ï—š—ğ`\n");
-	printf("\t€–Ú\to”ï‡Œv\n");
+	printf("\tï½å‡ºè²»å±¥æ­´ï½\n");
+	printf("\té …ç›®\tå‡ºè²»åˆè¨ˆ\n");
 	while (fscanf(fp, "%d%s", &money[i], &item[i].str) != EOF) {
 		moneySum += money[i];
-		printf("[%d]\t%d‰~\t%d‰~\n", i + 1, money[i], moneySum);
+		printf("[%d]\t%då††\t%då††\n", i + 1, money[i], moneySum);
 		i++;
 	}
-	printf("%s”N%sŒ‚Ìo”ï‚Ì‡Œv:%d‰~(%dŒ)\n", year, month, moneySum, i);
+	printf("%så¹´%sæœˆã®å‡ºè²»ã®åˆè¨ˆ:%då††(%dä»¶)\n", year, month, moneySum, i);
 	for (int j = 0; j < i; j++) {
 		for (int t = 0; t < i; t++) {
 			if (strcmp(copyitem[t].str, "") == 0) {
@@ -95,7 +95,7 @@ void fileCheck(char monthWord, char* year) {
 		strcpy(filePath, adress);
 		strcat(filePath, "/");
 		strcat(filePath, year);
-		strcat(filePath, "”N/");
+		strcat(filePath, "å¹´/");
 		strcat(filePath, monthNum);
 		strcat(filePath, ".");
 		strcat(filePath, monthName);
@@ -108,7 +108,7 @@ void fileCheck(char monthWord, char* year) {
 
 	fp1 = fopen(filePath, "r");
 	if (fp1 == NULL) {
-		printf("ƒtƒ@ƒCƒ‹‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ.(%s)\n", &filePath);
+		printf("ãƒ•ã‚¡ã‚¤ãƒ«ãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“.(%s)\n", &filePath);
 		askReturn();
 	}
 	else {		
@@ -136,8 +136,8 @@ void dayCheck(char* year, char* month) {
 
 int main(void) {
 	char month[3] = "", year[5];
-	printf("ŒŸõ‚·‚é”N?:>");	(void)scanf("%s", year);
-	printf("ŒŸõ‚·‚éŒ?:>");	(void)scanf("%s", month);
+	printf("æ¤œç´¢ã™ã‚‹å¹´?:>");	(void)scanf("%s", year);
+	printf("æ¤œç´¢ã™ã‚‹æœˆ?:>");	(void)scanf("%s", month);
 	if (0 >= atoi(month) || atoi(month) > 12) {
 		system("cls");
 		main();
